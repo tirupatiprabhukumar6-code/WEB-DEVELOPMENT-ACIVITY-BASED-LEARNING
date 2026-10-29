@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Library Management</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f4f7fc;color:#26354a;line-height:1.6}
+header{background:#203864;color:white;padding:20px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+nav{display:flex;gap:20px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none}
+nav a:hover{color:#f6cf77}
+.hero{text-align:center;padding:65px 20px;background:linear-gradient(120deg,#dbe8ff,#eee5ff)}
+.hero h2{font-size:36px;margin-bottom:10px}
+.hero p{margin-bottom:20px}
+input,button{font:inherit;padding:12px;border-radius:6px}
+input{border:1px solid #ccd5e4;width:min(400px,90%)}
+button{background:#203864;color:white;border:0;cursor:pointer}
+button:hover{background:#4169a1}
+section{padding:45px 6%}
+h2{text-align:center;margin-bottom:25px}
+.filters{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.book{background:white;padding:20px;border-radius:12px;text-align:center;box-shadow:0 4px 14px #20386412}
+.book img{height:190px;width:140px;object-fit:contain;margin-bottom:12px}
+.book h3{margin:8px 0}
+.book p{font-size:14px;margin:5px 0}
+.tag{display:inline-block;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:bold;margin-top:10px}
+.available{background:#d8f4df;color:#17652d}
+.issued{background:#ffe3dc;color:#a23c23}
+.table-wrap{overflow-x:auto}
+table{width:100%;min-width:650px;border-collapse:collapse;background:white}
+th,td{padding:14px;text-align:left;border:1px solid #dce2eb}
+th{background:#203864;color:white}
+tr:nth-child(even){background:#edf2fa}
+.rules{background:#e7eefb}
+.rules ul{max-width:650px;margin:auto;padding-left:25px}
+.rules li{padding:7px}
+footer{text-align:center;background:#203864;color:white;padding:22px}
+[hidden]{display:none!important}
+@media(max-width:600px){header{justify-content:center;text-align:center}nav{justify-content:center}.hero h2{font-size:28px}section{padding:35px 5%}}
+</style>
+</head>
+<body>
+
+<header>
+<h1>📚 BookNest Library</h1>
+<nav>
+<a href="#home">Home</a>
+<a href="#categories">Categories</a>
+<a href="#books">Books</a>
+<a href="#catalog">Catalog</a>
+<a href="#rules">Rules</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<h2>Discover Your Next Favorite Book</h2>
+<p>Read, learn, and explore a world of knowledge.</p>
+<input id="search" type="search" placeholder="Search book title or author..." aria-label="Search books">
+</section>
+
+<section id="categories">
+<h2>Book Categories</h2>
+<div class="filters">
+<button data-cat="All">All Books</button>
+<button data-cat="Technology">Technology</button>
+<button data-cat="Fiction">Fiction</button>
+<button data-cat="Science">Science</button>
+<button data-cat="History">History</button>
+</div>
+</section>
+
+<section id="books">
+<h2>Our Book Collection</h2>
+<div class="grid" id="bookGrid">
+<article class="book" data-cat="Technology">
+<img src="https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg" alt="Clean Code cover">
+<h3>Clean Code</h3><p>Author: Robert C. Martin</p><p>Technology</p>
+<span class="tag available">Available</span>
+</article>
+<article class="book" data-cat="Fiction">
+<img src="https://covers.openlibrary.org/b/isbn/9780141439518-L.jpg" alt="Pride and Prejudice cover">
+<h3>Pride and Prejudice</h3><p>Author: Jane Austen</p><p>Fiction</p>
+<span class="tag available">Available</span>
+</article>
+<article class="book" data-cat="Science">
+<img src="https://covers.openlibrary.org/b/isbn/9780553380163-L.jpg" alt="A Brief History of Time cover">
+<h3>A Brief History of Time</h3><p>Author: Stephen Hawking</p><p>Science</p>
+<span class="tag issued">Currently Issued</span>
+</article>
+<article class="book" data-cat="History">
+<img src="https://covers.openlibrary.org/b/isbn/9780062316097-L.jpg" alt="Sapiens cover">
+<h3>Sapiens</h3><p>Author: Yuval Noah Harari</p><p>History</p>
+<span class="tag available">Available</span>
+</article>
+<article class="book" data-cat="Technology">
+<img src="https://covers.openlibrary.org/b/isbn/9780134685991-L.jpg" alt="Effective Java cover">
+<h3>Effective Java</h3><p>Author: Joshua Bloch</p><p>Technology</p>
+<span class="tag issued">Currently Issued</span>
+</article>
+<article class="book" data-cat="Science">
+<img src="https://covers.openlibrary.org/b/isbn/9780743273565-L.jpg" alt="Cosmos cover">
+<h3>Cosmos</h3><p>Author: Carl Sagan</p><p>Science</p>
+<span class="tag available">Available</span>
+</article>
+</div>
+<p id="empty" hidden style="text-align:center;margin-top:20px">No matching books found.</p>
+</section>
+
+<section id="catalog">
+<h2>Library Catalog</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>ID</th><th>Book Title</th><th>Author</th><th>Category</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>B101</td><td>Clean Code</td><td>Robert C. Martin</td><td>Technology</td><td>Available</td></tr>
+<tr><td>B102</td><td>Pride and Prejudice</td><td>Jane Austen</td><td>Fiction</td><td>Available</td></tr>
+<tr><td>B103</td><td>A Brief History of Time</td><td>Stephen Hawking</td><td>Science</td><td>Issued</td></tr>
+<tr><td>B104</td><td>Sapiens</td><td>Yuval Noah Harari</td><td>History</td><td>Available</td></tr>
+<tr><td>B105</td><td>Effective Java</td><td>Joshua Bloch</td><td>Technology</td><td>Issued</td></tr>
+<tr><td>B106</td><td>Cosmos</td><td>Carl Sagan</td><td>Science</td><td>Available</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="rules" id="rules">
+<h2>Library Rules</h2>
+<ul>
+<li>Carry a valid library membership card.</li>
+<li>Return borrowed books before the due date.</li>
+<li>Keep books clean and avoid damaging pages.</li>
+<li>Maintain silence in the reading area.</li>
+<li>Report lost or damaged books to the librarian.</li>
+</ul>
+</section>
+
+<footer><p>© 2026 BookNest Digital Library | Read • Learn • Grow</p></footer>
+
+<script>
+const search=document.getElementById('search');
+const books=[...document.querySelectorAll('.book')];
+let category='All';
+
+function filterBooks(){
+ let count=0;
+ books.forEach(book=>{
+  const matchText=book.textContent.toLowerCase().includes(search.value.toLowerCase());
+  const matchCategory=category==='All'||book.dataset.cat===category;
+  book.hidden=!(matchText&&matchCategory);
+  if(!book.hidden)count++;
+ });
+ document.getElementById('empty').hidden=count>0;
+}
+search.addEventListener('input',filterBooks);
+document.querySelectorAll('[data-cat]').forEach(button=>{
+ button.addEventListener('click',()=>{
+  category=button.dataset.cat;
+  filterBooks();
+ });
+});
+</script>
+</body>
+</html>

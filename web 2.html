@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Common Goods — Thoughtful things for everyday</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="announcement">
+    A little something for your first order: 10% off with WELCOME10
+    <a href="#shop">Shop now →</a>
+  </div>
+
+  <header class="header">
+    <a class="brand" href="#">common goods</a>
+    <form class="search" role="search">
+      <input type="search" placeholder="Search thoughtful things…" aria-label="Search products">
+      <button type="submit" aria-label="Search">⌕</button>
+    </form>
+    <nav class="header-actions" aria-label="Account and cart">
+      <a href="#account">♙ Account</a>
+      <a href="#cart">♧ Bag <span class="cart-count">0</span></a>
+    </nav>
+  </header>
+
+  <nav class="nav" aria-label="Shopping navigation">
+    <a class="current" href="#shop">Shop all</a>
+    <a href="#home">Home</a>
+    <a href="#tech">Tech</a>
+    <a href="#accessories">Accessories</a>
+    <a href="#wellness">Wellness</a>
+    <a href="#kitchen">Kitchen</a>
+    <a class="sale-link" href="#shop">Sale · up to 40% off</a>
+  </nav>
+
+  <main id="shop">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">THE GOOD THINGS EDIT</span>
+        <h1>Make room for better things.</h1>
+        <p>Well-made essentials, thoughtful details, and little upgrades for the everyday. Good design should feel good, too.</p>
+        <a class="button" href="#products">Explore the collection →</a>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85" alt="Warm, sunlit modern living room">
+        <span class="hero-tag">LIVE WELL, EVERY DAY</span>
+      </div>
+    </section>
+
+    <section class="perks" aria-label="Shopping benefits">
+      <div>♧ &nbsp; Free shipping over $75</div>
+      <div>↺ &nbsp; Easy 30-day returns</div>
+      <div>✳ &nbsp; Thoughtfully sourced</div>
+      <div>♡ &nbsp; Made to last</div>
+    </section>
+
+    <section id="products">
+      <div class="section-heading">
+        <div>
+          <h2>Good finds, right now</h2>
+          <p>Considered favorites for home, work, and everywhere in between.</p>
+        </div>
+        <a href="#products">View all products →</a>
+      </div>
+
+      <div class="category-list" aria-label="Product categories">
+        <a class="active" href="#products">Everything</a>
+        <a href="#home">Home</a>
+        <a href="#tech">Tech</a>
+        <a href="#accessories">Accessories</a>
+        <a href="#wellness">Wellness</a>
+        <a href="#kitchen">Kitchen</a>
+      </div>
+
+      <div class="product-grid">
+        <article class="product" id="home">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=700&q=80" alt="Minimal sculptural table lamp">
+            <span class="badge">Bestseller</span>
+          </div>
+          <div class="product-meta"><span>HOME · LIGHTING</span><span class="rating">★ 4.9 (128)</span></div>
+          <h3>Forma Table Lamp</h3>
+          <p>A soft glow, a sculptural silhouette. Designed to stay.</p>
+          <div class="price">$84.00</div>
+          <button class="add-button">Add to bag</button>
+        </article>
+
+        <article class="product" id="tech">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=700&q=80" alt="Compact wireless speaker">
+            <span class="badge sale">Save 20%</span>
+          </div>
+          <div class="product-meta"><span>TECH · AUDIO</span><span class="rating">★ 4.8 (94)</span></div>
+          <h3>Pebble Bluetooth Speaker</h3>
+          <p>Rich, room-filling sound in a take-anywhere size.</p>
+          <div class="price">$64.00 <del>$80.00</del> <span class="discount">−20%</span></div>
+          <button class="add-button">Add to bag</button>
+        </article>
+
+        <article class="product" id="accessories">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=700&q=80" alt="Everyday canvas tote bag">
+            <span class="badge">Staff pick</span>
+          </div>
+          <div class="product-meta"><span>ACCESSORIES · BAGS</span><span class="rating">★ 4.9 (217)</span></div>
+          <h3>Day Trip Canvas Tote</h3>
+          <p>Your dependable everyday carry, made from sturdy cotton.</p>
+          <div class="price">$38.00</div>
+          <button class="add-button">Add to bag</button>
+        </article>
+
+        <article class="product" id="wellness">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=700&q=80" alt="Reusable stainless steel water bottle">
+            <span class="badge sale">Save 15%</span>
+          </div>
+          <div class="product-meta"><span>WELLNESS · ON THE GO</span><span class="rating">★ 4.7 (86)</span></div>
+          <h3>Daily Hydration Bottle</h3>
+          <p>A double-wall bottle that keeps the good stuff cold.</p>
+          <div class="price">$34.00 <del>$40.00</del> <span class="discount">−15%</span></div>
+          <button class="add-button">Add to bag</button>
+        </article>
+
+        <article class="product" id="kitchen">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&w=700&q=80" alt="Handmade ceramic mug">
+          </div>
+          <div class="product-meta"><span>KITCHEN · TABLETOP</span><span class="rating">★ 4.8 (63)</span></div>
+          <h3>Sunday Ceramic Mug</h3>
+          <p>A hand-finished favorite for slow mornings and refills.</p>
+          <div class="price">$26.00</div>
+          <button class="add-button">Add to bag</button>
+        </article>
+
+        <article class="product">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&fit=crop&w=700&q=80" alt="Minimal ceramic vase">
+            <span class="badge">New</span>
+          </div>
+          <div class="product-meta"><span>HOME · DECOR</span><span class="rating">★ 4.9 (41)</span></div>
+          <h3>Sunday Stoneware Vase</h3>
+          <p>A quietly beautiful shape for fresh stems or simply as is.</p>
+          <div class="price">$48.00</div>
+          <button class="add-button">Add to bag</button>
+        </article>
+
+        <article class="product">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=80" alt="Over-ear wireless headphones">
+            <span class="badge sale">Save 25%</span>
+          </div>
+          <div class="product-meta"><span>TECH · AUDIO</span><span class="rating">★ 4.8 (156)</span></div>
+          <h3>Everyday Wireless Headphones</h3>
+          <p>Comfort for the commute, focus for deep-work hours.</p>
+          <div class="price">$96.00 <del>$128.00</del> <span class="discount">−25%</span></div>
+          <button class="add-button">Add to bag</button>
+        </article>
+
+        <article class="product">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=700&q=80" alt="Slim leather wallet">
+          </div>
+          <div class="product-meta"><span>ACCESSORIES · EVERYDAY</span><span class="rating">★ 4.6 (52)</span></div>
+          <h3>Pocket-Sized Card Case</h3>
+          <p>A slim, responsibly made home for your daily essentials.</p>
+          <div class="price">$32.00</div>
+          <button class="add-button">Add to bag</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="promo">
+      <div>
+        <span class="eyebrow">A FRESH START FOR YOUR SPACE</span>
+        <h2>Small changes. Feel-good rooms.</h2>
+        <p>Find the details that make a place feel like yours.</p>
+        <a class="button" href="#home">Shop home →</a>
+      </div>
+      <strong>GOOD<br>THINGS<br>LIVE HERE</strong>
+    </section>
+
+    <section class="newsletter">
+      <div>
+        <h2>Good things in your inbox.</h2>
+        <p>New finds, thoughtful ideas, and 10% off your first order.</p>
+      </div>
+      <form>
+        <label class="sr-only" for="email">Email address</label>
+        <input id="email" type="email" placeholder="Your email address">
+        <button type="submit">Sign me up →</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#">common goods</a>
+    <nav aria-label="Footer navigation">
+      <a href="#about">Our story</a>
+      <a href="#shipping">Shipping & returns</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <span>© 2026 Common Goods</span>
+  </footer>
+</body>
+</html>
